@@ -2,14 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     isAuthenticated: false,
     isLoading:false,
-    user: null,
+    user:{
+        name:'sahar',
+        role:" "
+    }
 }
 const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers:{
         setUser:(state,action)=>{
-
+            state.user=action.payload.user
         }
     }
 })
